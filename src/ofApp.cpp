@@ -1,71 +1,88 @@
 #include "ofApp.h"
 
+
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
+	ofBackground(90);
+	ofEnableSmoothing();
+	ofEnableAlphaBlending();
+	ofSetWindowTitle("Snake game");
+
+	ofSetRectMode(OF_RECTMODE_CENTER);
+
+	ofSetFrameRate(5);
+
+	game.setup();
+}
+
+//----------------------------------
+void ofApp::draw() {
+	game.draw();
+}
+
+//----------------------------------
+void ofApp::update() {
+	game.update();
+}
+
+
+//--------------------------------------------------------------
+void ofApp::keyPressed(int key) {
+	game.getEvents(key);
+	if (game.state == "END") {
+		if (key == OF_KEY_RETURN) {
+			game.reset();
+		}
+	}
 
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::keyReleased(int key) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::mouseMoved(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key){
+void ofApp::mouseDragged(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
+void ofApp::mousePressed(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseReleased(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseEntered(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::mouseExited(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
+void ofApp::windowResized(int w, int h) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
+void ofApp::gotMessage(ofMessage msg) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 }
