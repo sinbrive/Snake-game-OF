@@ -181,9 +181,9 @@ void Snake::getEvents(int key) {
 //---------------------------------
 ofVec2f Snake::getRandomLocation() {
     ofVec2f v;
-    v.x = int(ofRandom(1, ofGetWidth() - CELL_SIZE));
-    v.y = int(ofRandom(1, ofGetHeight() - CELL_SIZE));
-    v.x = int(v.x / CELL_SIZE) * CELL_SIZE;
-    v.y = int(v.y / CELL_SIZE) * CELL_SIZE;
+    v.x = int(ofRandom(1, ofGetWidth()/CELL_SIZE-1));
+    v.y = int(ofRandom(1, ofGetHeight()/CELL_SIZE)-1);
+    v.x = v.x * CELL_SIZE;  
+    v.y = v.y * CELL_SIZE;
     return v;
 }
